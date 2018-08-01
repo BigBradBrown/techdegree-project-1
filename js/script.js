@@ -14,22 +14,33 @@ let quotes = [
   {quote: "Our lives are defined by opportunities, even the ones we miss.", source: "Benjamin Button", citation: "The curious case of Benjamin Button", date: 2008},
 ];
 
-
 // Create the getRandomQuuote function and name it getRandomQuote
 
 function getRandomQuote() {
   for ( let prop in quotes) {
-    console.log(quotes[prop])
+    console.log(quotes[prop]);
   }
 }
 
+getRandomQuote();
+
+function getRandomNumber () {
+var randomNumber = Math.floor( Math.random() * quotes.length ) + 1;
+  return randomNumber;
+}
+alert(getRandomNumber());
 
 
 // Create the printQuote funtion and name it printQuote
 
-function printQuote () {
-
+function printQuote (message) {
+var outputDiv = document.getElementById('quote-box');
+outputDiv.innerHTML = message;
 }
+
+message = '<p class="quote">This is where the random quote will go</p>';
+message += '<p class="source">This is the source<span class="citation">This is the citation</span><span class="year">This is the year</span></p>';
+printQuote(message);
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
